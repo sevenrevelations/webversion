@@ -1,0 +1,2 @@
+[functions.blobby-gateway]
+verify_jwt = false

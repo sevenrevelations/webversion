@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#080a12">
+<title>Open blobby.vip Web</title>
+<style>html,body{height:100%;margin:0;background:#080a12;color:#eef2ff;font-family:system-ui,sans-serif}main{height:100%;display:grid;place-items:center;padding:24px;box-sizing:border-box}.card{width:min(480px,100%);padding:24px;border:1px solid #273044;border-radius:20px;background:#101522;text-align:center}button,a{display:inline-flex;align-items:center;justify-content:center;margin:6px;padding:10px 14px;border-radius:11px;border:1px solid #34405a;background:#8da2ff;color:#080a12;font-weight:800;text-decoration:none;cursor:pointer}.secondary{background:#161d2b;color:#eef2ff}.note{color:#9ca8bd;font-size:13px;line-height:1.5}</style>
+</head>
+<body><main><div class="card"><h1>blobby.vip Web</h1><p>Open the standalone browser build normally or inside a clean <code>about:blank</code> presentation shell.</p><button id="blank">Open clean window</button><a class="secondary" href="./index.html">Open normally</a><p class="note">The clean window only changes presentation. Network requests still use the normal browser/network rules.</p></div></main>
+<script>
+document.getElementById('blank').onclick=()=>{
+  const w=open('about:blank','_blank'); if(!w){alert('Allow pop-ups for this action.');return;}
+  const src=new URL('./index.html',location.href).href.replace(/&/g,'&amp;').replace(/"/g,'&quot;');
+  w.document.open();w.document.write(`<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"><title>blobby.vip</title><style>html,body,iframe{width:100%;height:100%;margin:0;border:0;overflow:hidden;background:#080a12}iframe{display:block}</style></head><body><iframe src="${src}" allow="autoplay; encrypted-media; fullscreen; clipboard-read; clipboard-write"></iframe></body></html>`);w.document.close();
+};
+</script></body></html>

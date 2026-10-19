@@ -1,0 +1,13 @@
+{
+  "name": "blobby.vip Web",
+  "short_name": "blobby",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#080a12",
+  "theme_color": "#080a12",
+  "description": "The standalone browser build of blobby.vip.",
+  "icons": [
+    {"src":"./blobby-icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}
+  ]
+}
